@@ -15,6 +15,7 @@
 <!--<a class="btn btn-social-icon btn-twitter">
     <span class="fa fa-twitter"></span>
 </a>-->
-<a href="twitteroauth-master/twitter.php">Go to Twitter</a>
+<a href="twitteroauth-master/twitter.php">Go to Twitter</a><br>
+<a href="facebookoauth-master/facebook.php">Go to Facebook</a>
 </body>
 </html>
