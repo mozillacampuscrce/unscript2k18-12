@@ -3,7 +3,7 @@
 require_once "config.php";
 
 $redirectURL = "https://65076766.ngrok.io/twitter/facebookoauth-master/fb-callback.php";
-$permission = ['email'];
+$permission = ['email','user_posts'];
 $loginURL = $helper->getLoginUrl($redirectURL, $permission);
 
 

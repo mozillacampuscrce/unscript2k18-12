@@ -15,30 +15,29 @@
 <body>
     <div class="container" style="margin-top: 100px">
         <div class="row justify-content-center">
-            <div class="col-md-3">
-                <img src="<?php echo $_SESSION['userData']['picture']['url'] ?>" alt="">
-            </div>
             <div class="col-md-9">
                 <table class="table table-hover table-bordered">
                     <tbody>
                         <tr>
                             <td>ID</td>
-                            <td><?php echo $_SESSION['userData']['id'] ?></td>
+                            <td>Message</td>
+                            <td>Story</td>
+                            <td>Created Time</td>
                         </tr>
-                        <tr>
-                            <td>First Name</td>
-                            <td><?php echo $_SESSION['userData']['first_name'] ?></td>
-                        </tr>
-                        <tr>
-                            <td>Last Name</td>
-                            <td><?php echo $_SESSION['userData']['last_name'] ?></td>
-                        </tr>
-                        <tr>
-                            <td>Email</td>
-                            <td><?php echo $_SESSION['userData']['email'] ?></td>
-                        </tr>
+                        <?php
+                        $data = $_SESSION['userData'];
+                            for ($i = 0; $i < sizeof($data); $i++)    {
+                                echo '<tr>';
+                                    echo '<td>' . $data[$i]['id'] . '</td>';
+                                    echo '<td>' . @$data[$i]['message'] . '</td>';
+                                    echo '<td>' . $data[$i]['story'] . '</td>';
+                                    echo '<td>' . $data[$i]['created_time']['date'] . '</td>';
+                                echo '</tr>';
+                            }
+                        ?>
                     </tbody>
                 </table>
+                <?php /*print("<pre>".print_r($_SESSION, true)."</pre>"); */?>
             </div>
         </div>
     </div>

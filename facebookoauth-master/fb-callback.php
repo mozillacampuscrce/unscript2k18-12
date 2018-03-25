@@ -20,8 +20,8 @@
         $accessToken = $oAuth2Client->getLongLivedAccessToken($accessToken);
     }
 
-    $response = $fb->get("/me?fields=id,first_name,last_name,email,picture", $accessToken);
-    $userData = $response->getGraphNode()->asArray();
+    $response = $fb->get("/me/feed", $accessToken);
+    $userData = json_decode($response->getGraphEdge(), true);
     $_SESSION['userData'] = $userData;
     $_SESSION['access_token'] = (string) $accessToken;
     header('Location: index.php');
